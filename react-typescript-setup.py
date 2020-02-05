@@ -4,8 +4,8 @@
 import os
 
 #need to edit name of app
-dirname = input("Enter application's name:")
-authorname = input("Enter username:")
+dirname = input("Enter application's name: ")
+authorname = input("Enter username: ")
 
 currentdir = os.getcwd()
 print ("Current directory is %s" %currentdir)
@@ -35,7 +35,7 @@ finally:
 os.chdir("src")
 print ("Dir /src was created")
 
-#create file index.tsx
+# function to create new file
 def touch(fname, times=None):
     fhandle = open(fname, 'a')
     try:        
@@ -46,6 +46,19 @@ def touch(fname, times=None):
         fhandle.close()
         print("File %s was created" %fname)
 
+# function to append new text to file
+def appendfile(filename, newtext):
+    file = open(filename, 'w')
+    try:
+        file.write(newtext)
+    except:
+        print ("New text wasn't added to the file %s" %filename)
+        file.close()
+    finally:
+        print ("Configuraiton in file %s was added" %filename)
+        file.close()
+
+#create file index.tsx
 touch('index.tsx')
 indextsx = """import React from 'react';
 import ReactDOM from 'react-dom';
@@ -54,8 +67,7 @@ import App from './app';
 
 ReactDOM.render(<App />, document.querySelector('#root'));
 """
-open("index.tsx", "wb").write(indextsx)
-print("File indextsx was created")
+appendfile('index.tsx', indextsx)
 
 # go to "../"
 os.chdir("..")
@@ -93,7 +105,7 @@ packagejson = """{
   }
 }
 """
-open("package.json","wb").write(packagejson)
+appendfile('package.json', packagejson)
 
 # start npm install form command line
 print ("npm install packages")
@@ -112,8 +124,7 @@ tsconfigjson = """{
     "allowSyntheticDefaultImports": true
   }
 }"""
-open("tsconfig.json", "wb").write(tsconfigjson)
-print ("File tsconfig.json was created")
+appendfile('tsconfig.json', tsconfigjson)
 
 #create webpack.config.js (added html-webpack-plugin)
 touch('webpack.config.js')
@@ -149,8 +160,7 @@ module.exports = {
     ]
 }"""
 
-open("webpack.config.js","wb").write(webpackconfigjson)
-print ("File webpack.config.js was created")
+appendfile('webpack.config.js', webpackconfigjson)
 
 #create app.tsx file 
 os.chdir("src")
@@ -162,8 +172,7 @@ export default function app()
     return <h1>Hello, world!</h1>
 }
 """
-open("app.tsx","wb").write(apptsx)
-print("File app.tsx was created successfuly")
+appendfile('app.tsx', apptsx)
 
 #create in dir ./src index.html
 touch('index.html')
@@ -181,15 +190,13 @@ indexhtml = """<!DOCTYPE html>
 </body>
 </html>
 """
-open("index.html", "wb").write(indexhtml)
-print ("File index.html was successfuly created in dir ./src")
-print (" ")
+appendfile('index.html', indexhtml)
 
 #go to root directory of our application
 os.chdir("..")
 
 #install html-webpack-plugin
-print ("Wait...is installed html-webpack-plugin...")
+print ("Waiting please ... is installed html-webpack-plugin...")
 os.system("npm install --save-dev html-webpack-plugin")
 print ("Plugin html-webpack-plugin was installed successfuly")
 print ("-------------------------------------------------------")
