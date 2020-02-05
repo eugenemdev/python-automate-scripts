@@ -1,9 +1,11 @@
+#! python3
+
 # import the os module
 import os
 
 #need to edit name of app
-dirname = input("Enter application's name:  ")
-authorname = input("Enter username:  ")
+dirname = input("Enter application's name:")
+authorname = input("Enter username:")
 
 currentdir = os.getcwd()
 print ("Current directory is %s" %currentdir)
