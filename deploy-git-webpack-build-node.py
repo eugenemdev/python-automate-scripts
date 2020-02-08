@@ -37,8 +37,6 @@ logger.info('----------------')
 
 
 # check current repository for github prefs
-os.chdir('..')
-os.chdir('eugenem.dev')
 currentpath = os.getcwd();
 try:
     repo = Repo(currentpath)
