@@ -4,7 +4,7 @@
 This script make start installation with new application on React, Typescript and Webpack.
 Previously it need to install npm and Python (version>=3.6)
 
-### deploy-git-webpack-build-node.py (Python3)
+### deploy-git-webpack-build-node.py
 This script makes pull from git for current directory where is Github's repository. 
 Script  makes follow steps:
 - read name of Github's repository, where is this script too

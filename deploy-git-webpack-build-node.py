@@ -1,3 +1,5 @@
+# !python
+
 # Pull, build our github repository and start NodeJS server
 # we use library Gitpython 
 # https://gitpython.readthedocs.io/en/stable/intro.html
@@ -69,7 +71,7 @@ except:
 #start NodeJS server with nohup
 try: 
     logger.info('NodeJS server starts now with new build')
-    startserver = os.system('sudo nohup node server.js &')        
+    startserver = os.system('node server.js')        
 except:
     logger.error('There is a problem by the start NodeJS server with new build')
  
