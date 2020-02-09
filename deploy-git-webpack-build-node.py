@@ -69,9 +69,6 @@ except:
     logger.error('There was a problem to create new build')
 
 #start NodeJS server with nohup
-try: 
-    logger.info('NodeJS server starts now with new build')
-    startserver = os.system('node server.js')        
-except:
-    logger.error('There is a problem by the start NodeJS server with new build')
+logger.info('NodeJS server starts now with new build')
+startserver = os.system('node server.js > app.log &')        
  
