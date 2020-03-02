@@ -91,17 +91,17 @@ packagejson = """{
   "author": """ + '"'+ authorname +'"' + """,
   "license": "ISC",
   "dependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
-    "@types/react": "^16.8.24",
-    "@types/react-dom": "^16.0.5",
-    "@types/webpack": "4.1.4",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "@types/webpack": "4.41.7",
     "ts-loader": "^6.2.1",
-    "typescript": "^3.4.3",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
   }
 }
 """
